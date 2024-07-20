@@ -1,8 +1,7 @@
 name: App Builder
 on:
   push:
-    tags:
-      - "v*"
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -56,12 +55,10 @@ jobs:
         uses: tauri-apps/tauri-action@v0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
-          TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
         with:
           # tauri-action replaces \_\_VERSION\_\_ with the app version
-          tagName: ${{ github.ref_name }}
-          releaseName: "[Unaffiliated] Yandex Email v__VERSION__"
+          tagName: main
+          releaseName: "[Unaffiliated] Yandex Email v1.0.1"
           releaseBody: |
             ${{steps.build_changelog.outputs.changelog}}
             See the assets to download this version and install.
