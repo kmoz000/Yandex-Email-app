@@ -1,6 +1,6 @@
 # Google Keep Desktop App
 
-\[Unaffiliated] Google Keep as a desktop app using Tauri
+\[Unaffiliated] Yandex email as a desktop app using Tauri
 
 ## How to run
 
