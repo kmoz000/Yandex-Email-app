@@ -1,4 +1,4 @@
-# Google Keep Desktop App
+# Yandex email Desktop App
 
 \[Unaffiliated] Yandex email as a desktop app using Tauri
 
