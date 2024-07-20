@@ -7,7 +7,7 @@
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "Google Keep",
+    "productName": "Yandex Email",
     "version": "../package.json"
   },
   "tauri": {
@@ -121,8 +121,8 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "Google.Keep",
-      "publisher": "Elijah Lopez",
+      "identifier": "Yande.Email",
+      "publisher": "Abdelkarim O.",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -132,7 +132,7 @@
         "signingIdentity": null
       },
       "resources": [],
-      "shortDescription": "Unofficial Google Keep desktop app made with Tauri",
+      "shortDescription": "Unofficial Yandex Email desktop app made with Tauri",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
@@ -144,20 +144,14 @@
       "csp": null
     },
     "updater": {
-      "active": true,
-      "endpoints": [
-        "https://elijahlopez.ca/tauri-releases/google-keep-desktop/{{target}}/{{current_version}}",
-        "https://lenerva.com/tauri-releases/google-keep-desktop/{{target}}/{{current_version}}"
-      ],
-      "dialog": true,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDVFRkVCQjI4OUE3QkUwMjEKUldRaDRIdWFLTHYrWGtPbEhrTWNoVmxWRnpMdUlMd1FPd0FNSE5WWFJVek1QdU4zb20ySWhaZjYK"
+      "active": false
     },
     "windows": [
       {
         "fullscreen": false,
         "resizable": true,
         "visible": false,
-        "title": "Google Keep"
+        "title": "Yandex Email"
       }
     ]
   }

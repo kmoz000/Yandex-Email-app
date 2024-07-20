@@ -12,7 +12,7 @@ fn main() {
     .plugin(tauri_plugin_window_state::Builder::default().build())
     .setup(|app| {
         let window = app.get_window("main").unwrap();
-        window.eval("window.location.replace('https://keep.google.com/');").unwrap();
+        window.eval("window.location.replace('https://mail.yandex.ru/');").unwrap();
         Ok(())
     })
     .run(tauri::generate_context!())

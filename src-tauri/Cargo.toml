@@ -1,5 +1,5 @@
 [package]
-name = "google-keep"
+name = "yandex-email"
 version = "0.0.0"
 description = "A Tauri App"
 authors = ["you"]
