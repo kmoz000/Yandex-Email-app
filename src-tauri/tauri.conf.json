@@ -1,6 +1,6 @@
 {
   "productName": "yandex-email-webapp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "identifier": "company.dup.yandexmail",
   "build": {
     "beforeDevCommand": "yarn dev",
@@ -22,6 +22,7 @@
         "transparent": false
       }
     ],
+    "macOSPrivateApi": true,
     "security": {
       "csp": null
     }
