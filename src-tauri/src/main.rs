@@ -9,9 +9,6 @@ fn greet(name: &str) -> String {
 
 fn main() {
     tauri::Builder::default()
-<<<<<<< HEAD
-        .plugin(tauri_plugin_shell::init())
-=======
         .plugin(tauri_plugin_notification::init())
         .plugin(tauri_plugin_shell::init())
         .plugin(tauri_plugin_os::init())
@@ -80,7 +77,6 @@ fn main() {
              "#
         ).unwrap(); */
        })
->>>>>>> f3ec6be (aaa)
         .invoke_handler(tauri::generate_handler![greet])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
