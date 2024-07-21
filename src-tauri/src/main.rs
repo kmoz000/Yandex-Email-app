@@ -1,38 +1,16 @@
-// This hides the console for Windows release builds
-#![cfg_attr(
-    all(not(debug_assertions), target_os = "windows"),
-    windows_subsystem = "windows"
-)]
+// Prevents additional console window on Windows in release, DO NOT REMOVE!!
+#![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use tauri::Manager;
+// Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
+#[tauri::command]
+fn greet(name: &str) -> String {
+    format!("Hello, {}! You've been greeted from Rust!", name)
+}
 
 fn main() {
     tauri::Builder::default()
-        .setup(|app| {
-            let window = app.get_window("main").unwrap();
-
-            // Load the page with the JavaScript that checks the cookie and redirects
-            window.eval(
-                r#"
-                (function() {
-                    function checkCookie(cookieName) {
-                        const value = `; ${document.cookie}`;
-                        const parts = value.split(`; ${cookieName}=`);
-                        if (parts.length === 2) return parts.pop().split(';').shift();
-                    }
-
-                    const yandexLoginCookie = checkCookie('yandex_login');
-
-                    if (yandexLoginCookie) {
-                        window.location.href = 'https://mail.yandex.ru';
-                    } else {
-                        window.location.href = 'https://passport.yandex.ru/auth?retpath=https%3A%2F%2Fmail.yandex.ru';
-                    }
-                })();
-                "#
-            ).unwrap();
-            Ok(())
-        })
+        .plugin(tauri_plugin_shell::init())
+        .invoke_handler(tauri::generate_handler![greet])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
