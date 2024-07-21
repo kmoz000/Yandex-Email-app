@@ -57,6 +57,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           # tauri-action replaces \_\_VERSION\_\_ with the app version
+          tagName: "latest"
           releaseName: "[Unaffiliated] Yandex Email v1.0.0"
           releaseBody: |
             ${{steps.build_changelog.outputs.changelog}}
